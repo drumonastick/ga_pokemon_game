@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <title>GA Games!</title>
+  <!-- check viewport tag from Google MDN -->
+  <meta name="viewport" content="width=device-width" />
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<!-- Mobile First to Landscape of [phone type] -->
+
+<body>
+  <div class="container">
+    <!-- Start screen div -->
+    <div id="startScreen" class="panel">
+      <header>
+        <img src="img/graphic_assets/ga_logo_red.png" alt="General Assembly">
+        <h1>Games!</h1>
+      </header>
+      <p>Students will battle each other for ultimate glory! Battles will pit Team Red against Team Black.
+      </p>
+      <p>A battle is won when a team wins two rounds. Gladiators will be voluteered as tribute from the selected classes below! Each gladiator has three attacks to choose from.
+      </p>
+      <div id="startScreenBottom">
+        <!-- Radio lists or student selections -->
+        <div class="radiosForReaping">
+          <h3>Team Red</h3>
+          <div>
+            <input type="radio" name="teamRed" id="uxdi13Red" value="uxdi13" />
+            <label for="uxdi13Red">UXDi 13</label>
+          </div>
+          <div>
+            <input type="radio" name="teamRed" id="uxdi11Red" value="uxdi11" checked />
+            <label for="uxdi11Red">UXDi 11</label>
+          </div>
+          <div>
+            <input type="radio" name="teamRed" id="uxdi10Red" value="uxdi10" />
+            <label for="uxdi10Red">UXDi 10</label>
+          </div>
+          <div>
+            <input type="radio" name="teamRed" id="fewd25Red" value="fewd25" />
+            <label for="fewd25Red">FEWD 25</label>
+          </div>
+          <div>
+            <input type="radio" name="teamRed" id="gaStaffRed" value="gaStaff" disabled="disabled" />
+            <label for="gaStaffRed">GA Staff</label>
+          </div>
+        </div> <!-- end radiosForReaping div -->
+
+        <div class="radiosForReaping">
+          <h3>Team Black</h3>
+          <div>
+            <input type="radio" name="teamBlack" id="uxdi13Black" value="uxdi13" />
+            <label for="uxdi13Black">UXDi 13</label>
+          </div>
+          <div>
+            <input type="radio" name="teamBlack" id="uxdi11Black" value="uxdi11" checked />
+            <label for="uxdi11Black">UXDi 11</label>
+          </div>
+          <div>
+            <input type="radio" name="teamBlack" id="uxdi10Black" value="uxdi10" />
+            <label for="uxdi10Black">UXDi 10</label>
+          </div>
+          <div>
+            <input type="radio" name="teamBlack" id="fewd25Black" value="fewd25"/>
+            <label for="fewd25Black">FEWD 25</label>
+          </div>
+          <div>
+            <input type="radio" name="teamBlack" id="gaStaffBlack" value="gaStaff" disabled="disabled"/>
+            <label for="gaStaffBlack">GA Staff</label>
+          </div>
+        </div> <!-- end radiosForReaping div -->
+
+        <button id="beginGamesButton">Battle!</button>
+      </div> <!-- end startScreenBottom div -->
+    </div> <!-- end startScreen .panel -->
+
+    <!-- main Game screen div -->
+    <div id="gameScreen" class="panel" style="display: none;">
+
+      <!-- keeps score of battle rounds -->
+      <div class="scoreKeeper">
+        <img id="playerOneRoundTwoWin" src="img/graphic_assets/ga_logo_red.png" alt="General Assembly" style="display: none;">
+        <img id="playerOneRoundTwoBlank" src="img/graphic_assets/ga_logo_blank.png" alt="General Assembly">
+        <img id="playerOneRoundOneWin" src="img/graphic_assets/ga_logo_red.png" alt="General Assembly" style="display: none;">
+        <img id="playerOneRoundOneBlank" src="img/graphic_assets/ga_logo_blank.png" alt="General Assembly">
+        <p>score</p>
+        <img id="playerTwoRoundOneWin" src="img/graphic_assets/ga_logo_black.png" alt="General Assembly" style="display: none;">
+        <img id="playerTwoRoundOneBlank" src="img/graphic_assets/ga_logo_blank.png" alt="General Assembly">
+        <img id="playerTwoRoundTwoWin" src="img/graphic_assets/ga_logo_black.png" alt="General Assembly" style="display: none;">
+        <img id="playerTwoRoundTwoBlank" src="img/graphic_assets/ga_logo_blank.png" alt="General Assembly">
+      </div> <!-- endScoreKeeper -->
+
+      <!-- area where the battle occurs and health points are shown -->
+      <!-- possible CSS animations -->
+      <div class="battleArena">
+        <img id="playerPhotoRed" src="." alt=".">
+        <p id="healthOne">10</p>
+        <p id="healthTwo">10</p>
+        <img id="playerPhotoBlack" src="." alt=".">
+      </div> <!-- endBatttleArena -->
+
+      <!-- Shows attack effects, Game status, and turn based attack button -->
+      <div class=actionStrip>
+        <div class="actionStatus">
+          <img id="actionProfilePic" src="." alt="." style="display:none">
+          <div class="attackStatuses">
+            <p id="attackMaker"></p>
+            <p id="attackName"></p>
+            <p id="attackStrength"></p>
+          </div>
+        </div> <!-- end #actionStatus div-->
+        <button id="attackButtonRed" class="actionButton">Attack!</button>
+        <button id="attackButtonBlack" class="actionButton" style="display:none">Attack!</button>
+        <button id="roundWinnerAnnounce" class="actionButton" style="display:none">And the winner is..</button>
+        <button id="nextRoundButton" class="actionButton" style="display:none">Next Round!</button>
+        <button id="meetAndGreetGladiatorsButton" class="actionButton" style="display:none">Meet our Gladiators!</button>
+      </div> <!-- actionStrip -->
+
+    </div> <!-- end gameScreen .panel -->
+
+    <!-- Meet & Greet Our Gladiators screen div -->
+    <div id="mgGladiatorsScreen" class="panel">
+      <p class="heading">Meet & Greet your Gladiators!</p>
+      <p>Are you not entertained?!..</p>
+      <div id="gladiatorsListContainer">
+        <ul id="gladiatorsListRed"></ul>
+        <ul id="gladiatorsListBlack"></ul>
+      </div> <!-- end gladiatorsListContainer -->
+      <a id="battleAgain" href="index.html" target="_self">Battle again!</a>
+    </div> <!-- end Meet & Greet Our Gladiators screen -->
+
+    <!-- cheerSquad responsive div, hidden until large screen detected -->
+    <!-- <div id="cheerSquadScreen" class="panel">
+      <img src="img/graphic_assets/fewd_m3.png" alt="The Cheering Squad">
+    </div>  -->
+    <!-- end cheerSquadScreen .panel -->
+
+  </div> <!-- end .container -->
+
+  <script src="js/jquery-2.2.1.min.js" type="text/javascript"></script>
+  <script src="js/students.js" type="text/javascript"></script>
+  <script src="js/main.js" type="text/javascript"></script>
+</body>
+
+</html>

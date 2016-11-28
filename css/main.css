@@ -1,0 +1,244 @@
+html {
+  font-family: tahoma;
+}
+
+body {
+  /*campus and profile pages had 8px margin inherited from user agent.
+    however index.html did not, had 0px, so this covers all html pages. */
+  margin: 8px;
+}
+
+.container {
+  width: 568px;
+  margin: 0 auto;
+  /* border-left: 2px solid black;
+  border-right: 2px solid black; */
+}
+
+.panel {
+  height: 320px;
+  width: 568px;
+  padding: 10px;
+  /*border-bottom: 2px dashed grey;*/
+}
+
+.actionStrip {
+  border: 1px solid black;
+}
+
+/* Styling */
+
+header {
+  margin-bottom: 10px;
+}
+
+header img {
+  height: 40px;
+  float: left;
+  margin-right: 10px;
+}
+
+h1 {
+  color: crimson;
+  font-size:30px;
+  margin: 3px 0;
+}
+
+p {
+  margin: 0px;
+  font-size: 13px;
+}
+
+button {
+  background-color: crimson;
+  border: none ;
+  border-radius: 5px;
+  color: white;
+  font-size: 20px;
+  height: 70px;
+  width: 120px;
+}
+
+#startScreenBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.radiosForReaping {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#attackButtonBlack {
+  background-color: black;
+}
+
+#beginGamesButton {
+  float: right;
+  margin: 0 10px 0 0;
+}
+
+.panel .scoreKeeper {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.panel .scoreKeeper img {
+  height: 40px;
+  width: 40px;
+}
+
+.panel .scoreKeeper p {
+  font-size: 30px;
+  padding: 5px;
+}
+
+.panel .battleArena {
+  height: 176px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel .battleArena img {
+  height: 120px;
+  width: 120px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
+.panel .battleArena #playerPhotoRed {
+  border: 4px solid crimson;
+}
+
+.panel .battleArena #playerPhotoBlack {
+  border: 4px solid Black;
+}
+
+/* Styles for Health Point scores*/
+.panel .battleArena p {
+  font-size: 30px;
+}
+
+/* Styling the healh points text to be red to match the player */
+#healthOne {
+  color: crimson;
+  padding-right: 120px;
+}
+
+.panel .actionStrip {
+  height: 70px;
+  padding: 10px;
+  border-radius: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel .actionStrip img {
+  height: 40px;
+  width: 40px;
+}
+
+.actionStatus {
+  padding: 5px;
+  display: flex;
+}
+
+.attackStatuses {
+  padding-left: 10px;
+}
+
+#attackName {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#mgGladiatorsScreen .heading {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Hides the Gladiator screen when in mobile below 1280px */
+#mgGladiatorsScreen {
+  display: none;
+}
+
+#gladiatorsListContainer {
+  display: flex;
+  align-items: flex-end;
+}
+
+#gladiatorsList {
+  width: 350px;
+}
+
+#gladiatorsListContainer ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 3px 0;
+}
+
+.gladiatorRow img {
+  height: 40px;
+  width: 40px;
+}
+
+.gladiatorRow .liLogo {
+  height: 15px;
+  width: 15px;
+  padding-left: 10px;
+}
+
+#gladiatorsListContainer ul li a {
+  color: navy;
+  padding-left: 5px;
+  text-decoration: none;
+}
+
+#battleAgain {
+  float: right;
+  background-color: crimson;
+  border: none ;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 70px;
+  color: white;
+  font-size: 20px;
+  height: 70px;
+  width: 120px;
+}
+
+/*When screen under break point, hide cheerSquadScreen*/
+#cheerSquadScreen {
+  display: none;
+}
+
+/* Cheer Squad div image restrict to full size of .panel at 568px*/
+#cheerSquadScreen img {
+  width: 568px;
+}
+
+/* Responsive media queries */
+
+@media (min-width: 1280px) {
+  .container {
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #mgGladiatorsScreen {
+    display: block;
+    border-top: none;
+    /*border-left: 2px solid black;*/
+  }
+  #cheerSquadScreen {
+    display: block;
+  }
+}
